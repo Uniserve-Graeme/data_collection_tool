@@ -1,9 +1,9 @@
 ('C:\\Users\\dicec\\OneDrive\\Documents\\GitHub\\data_collection_tool\\build\\ui_commands\\ui_commands.exe',
- True,
+ False,
  False,
  True,
  'C:\\Program '
- 'Files\\Python310\\lib\\site-packages\\PyInstaller\\bootloader\\images\\icon-console.ico',
+ 'Files\\Python310\\lib\\site-packages\\PyInstaller\\bootloader\\images\\icon-windowed.ico',
  None,
  False,
  False,
@@ -56,8 +56,8 @@
  [],
  False,
  False,
- 1665001741,
- [('run.exe',
+ 1665003473,
+ [('runw.exe',
    'C:\\Program '
-   'Files\\Python310\\lib\\site-packages\\PyInstaller\\bootloader\\Windows-64bit\\run.exe',
+   'Files\\Python310\\lib\\site-packages\\PyInstaller\\bootloader\\Windows-64bit\\runw.exe',
    'EXECUTABLE')])

@@ -82,8 +82,8 @@ def ping(host, os, testType):
         
     if debug_mode == True: print("ping count", param_count_number)
     
-    #modified packet size from 1472 to 1400 since command would not run on my pc for sizes above 1419
-    command = ['ping', param_count_flag, param_count_number, param_MTU, '1400', host]   # Command itself
+    #modified packet size from 1472 to 1000 since I could not get the ping to work at 1472
+    command = ['ping', param_count_flag, param_count_number, param_MTU, '1000', host]   # Command itself
     
     ping_result = run_and_log(command)  # executes and logs the command to the defined variable
     return ping_result
