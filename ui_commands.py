@@ -82,9 +82,12 @@ def ping(host, os, testType):
         
     if debug_mode == True: print("ping count", param_count_number)
     
-    command = ['ping', param_count_flag, param_count_number, param_MTU, '1472', host]   # Command itself
+    #modified packet size from 1472 to 1400 since command would not run on my pc for sizes above 1419
+    command = ['ping', param_count_flag, param_count_number, param_MTU, '1400', host]   # Command itself
+    
     ping_result = run_and_log(command)  # executes and logs the command to the defined variable
     return ping_result
+
 
 
 def traceroute(host, os):
@@ -206,6 +209,8 @@ if startup: #load screen
     text_font_small = pygame.font.Font("font/Pixeltype.ttf", 30)
     text_font_micro = pygame.font.Font("font/Pixeltype.ttf", 20)
     clock = pygame.time.Clock()
+    icon_surf = pygame.image.load("graphics/uniserve_icon.png").convert_alpha()
+    pygame.display.set_icon(icon_surf)
 
 class Test_Progress():
     def __init__(self):
@@ -344,7 +349,7 @@ class Display_Manager:
     def update_message(self):
         #update message based on current_screen
         if self.current_screen == "welcome": self.message = "Welcome to the Uniserve Data Collection Tool"
-        if self.current_screen == "testing": self.message = "Currently running tests. This can take up to five minutes, so please do not exit the program even if it appears frozen or unresponsive."
+        if self.current_screen == "testing": self.message = "Currently running tests. This can take up to five minutes for the quick test and up to twenty minutes for the full test, so please do not exit the program even if it appears frozen or unresponsive."
         if self.current_screen == "complete": self.message = "Testing is complete. You can now exit the program and email the file containing the test results to placeholder@uniserve.com"
     
     def update(self):
